@@ -10,7 +10,7 @@ namespace Lab6
     class Program
     {
         static void ReRoll(int input)
-        {
+        {    
             Console.WriteLine("Would You Like TO Try Your Luck Again?(Y/N)");
             string userChoice =Console.ReadLine();
 
@@ -19,21 +19,23 @@ namespace Lab6
                 Console.WriteLine("Please Enter Y to ReRoll or N to End Program");
                 userChoice = Console.ReadLine();
             }
+
             if (Regex.IsMatch(userChoice, @"^[yY]$"))
             {
                 RollOutcome(input);
             }
+
             else if (Regex.IsMatch(userChoice, @"^[nN]$"))
             {
-                return;
+                return;  
             }
-               
+                 
         }
 
         static void RollOutcome(int input)
         {
             int randnum1 = RandomNumber.Randomness.getNextInt(1, input);
-            System.Threading.Thread.Sleep(900);
+            System.Threading.Thread.Sleep(1500);
             int randnum2 = RandomNumber.Randomness.getNextInt(1, input);
             Console.WriteLine(randnum1);
             Console.WriteLine(randnum2);
@@ -52,15 +54,6 @@ namespace Lab6
             }
             ReRoll(input);
         }
-        
-
-
-
-
-
-
-
-
 
         static void Main()
         {
@@ -70,7 +63,7 @@ namespace Lab6
             Console.ReadKey();
 
             RollOutcome(diceSide);
-            ReRoll(diceSide);
+          //  ReRoll(diceSide);
             
 
 
